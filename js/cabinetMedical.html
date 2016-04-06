@@ -1,0 +1,5 @@
+<h1>{{$ctrl.titre}}</h1> <!-- $ctrl fait référence au controller -->
+<p>On prend les données dans {{$ctrl.src}}</p>
+<ul>
+    <li ng-repeat="inf in $ctrl.data.infirmiers">{{inf|json}}</li>
+</ul>
