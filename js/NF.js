@@ -7,7 +7,6 @@ var proxyNF = function($http) {
     this.getData = function(src){
         return $http.get(src).then(processData);
     }
-    //intégrer le code de traitement ici dans la fonction
 }
 proxyNF.$inject = [ "$http" ]; // Injection de dépendances
 

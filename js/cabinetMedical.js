@@ -3,7 +3,7 @@ require( "./cabinetMedical.css" );
 
 module.exports = function(moduleAngular) {
 	var proxyNF = require( "./NF.js" )(moduleAngular);
-
+    require( "./infirmier.js" )(moduleAngular);
 	var controller = function( proxyNF ) {
         console.log( "on a une nouvelle instance de cabinetMedical" );
         //proxyNF.getData("./data.cabinetInfirmier.xml");
