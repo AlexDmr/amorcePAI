@@ -1,5 +1,37 @@
 <h1>{{$ctrl.titre}}</h1> <!-- $ctrl fait référence au controller -->
 <p>On prend les données dans {{$ctrl.src}}</p>
-<ul>
-    <li ng-repeat="inf in $ctrl.data.infirmiers">{{inf|json}}</li>
-</ul>
+
+
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Infirmiers">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Infirmiers</h1>
+          
+            
+            
+            
+            
+            
+            <ul>
+                <li ng-repeat="inf in $ctrl.data.infirmiers">{{inf|json}}</li>
+            </ul>
+            
+        </md-content>
+      </md-tab>
+      <md-tab label="Patients non affectés">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Patients non affectés</h1>
+          
+            <ul>
+                <li ng-repeat="inf in $ctrl.data.patientNonAffectes">{{inf|json}}</li>
+            </ul>
+            
+            
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

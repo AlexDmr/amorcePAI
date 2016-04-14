@@ -1,6 +1,5 @@
 var template = require( "./cabinetMedical.html" );
 require( "./cabinetMedical.css" );
-
 module.exports = function(moduleAngular) {
 	var proxyNF = require( "./NF.js" )(moduleAngular);
     require( "./infirmier.js" )(moduleAngular);
