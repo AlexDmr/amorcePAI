@@ -2,7 +2,7 @@ var template = require( "./patient.html" )
 var templateForm = require( "./formulairePatient.html" )
 module.exports = function(moduleAngular) {
     require( "./patient.css" );
-    var proxyNF = require( "./NF.js" )(moduleAngular);
+    var proxyNF = require( "../NF.js" )(moduleAngular);
     var ctrlPatient = function ( $http, proxyNF ){
         
         var ctrl=this;

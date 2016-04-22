@@ -6,7 +6,7 @@ var template = require( "./infirmier.html" )
 
 module.exports = function(moduleAngular) {
 
-var proxyNF = require( "./NF.js" )(moduleAngular);
+var proxyNF = require( "../NF.js" )(moduleAngular);
 var ctrlInfirmier = function (){
     
     //créer methodes pour affectert patient à l'infirmier et ce servir du proxyNF

@@ -1,7 +1,7 @@
 var template = require( "./cabinetMedical.html" );
 require( "./cabinetMedical.css" );
 module.exports = function(moduleAngular) {
-	var proxyNF = require( "./NF.js" )(moduleAngular);
+	var proxyNF = require( "../NF.js" )(moduleAngular);
     
 	var controller = function( proxyNF ) {
         console.log( "on a une nouvelle instance de cabinetMedical" );
@@ -14,8 +14,8 @@ module.exports = function(moduleAngular) {
 		// Cette fonction sera appelée pour instancier un cabinet
 	}
     
-    require( "./infirmiers/infirmier.js" )(moduleAngular);
-    require( "./patients/patient.js" )(moduleAngular);
+    require( "../infirmiers/infirmier.js" )(moduleAngular);
+    require( "../patients/patient.js" )(moduleAngular);
 	controller.$inject = [ 'proxyNF' ]; // Injection de dépendances ou services que va utiliser la fonction controller
 
 	moduleAngular.component( "cabinetMedical", {

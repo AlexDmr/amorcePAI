@@ -60,21 +60,21 @@ function processData(resp){
 return cabinetJS;
     
 //ajout d'un nouveau patient dans la BDD
-this.ajouterNouveauPatient = function(nouveauPatient) {
-    return $http({
-        method  : 'POST',
-        url     : "/addPatient",
-        data    : nouveauPatient
-    }).then(function(response){
-        console.log("ajout patient depuis NF.js");
-    })
-};
+    this.ajouterNouveauPatient = function(nouveauPatient) {
+        return $http({
+            method  : 'POST',
+            url     : "/addPatient",
+            data    : nouveauPatient
+        }).then(function(response){
+            console.log("ajout patient depuis NF.js");
+        });
 
+
+    };
+    
+    
     
 }
-    
-    
-    
 };
 
 proxyNF.$inject = [ "$http" ]; // Injection de dépendances
