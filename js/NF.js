@@ -7,18 +7,13 @@ var proxyNF = function($http) {
     this.getData = function(src){
         return $http.get(src).then(processData);
     }
-}
-proxyNF.$inject = [ "$http" ]; // Injection de dépendances
 
-module.exports = function(moduleAngular) {
-	var idService = "proxyNF";
-	moduleAngular.service(idService, proxyNF);
-	return idService;
-};
+
+
 
 
 function processData(resp){
-    var cabinetJS = {patientNonAffectes : [], infirmiers : {} };
+    var cabinetJS = {patientNonAffectes : [], infirmiers : {}, patients : [] };
     var parser = new DOMParser();
     var doc = parser.parseFromString(resp.data, "text/xml");
     var infirmiersXML = doc.querySelectorAll("infirmier");
@@ -51,6 +46,7 @@ function processData(resp){
                                     postalCode : patientXML.querySelector("adresse[codePostal]")
                                     }
                     };
+        cabinetJS.patients.push(patient);
         //patient affecté?
         var visite = patientXML.querySelector("visite[intervenant]");
         if(visite===null){
@@ -60,5 +56,18 @@ function processData(resp){
             cabinetJS.infirmiers[id].patients.push(patient);
         }
     }
+    
+    
+    
 return cabinetJS;
 }
+    
+    
+    
+};
+
+proxyNF.$inject = [ "$http" ]; // Injection de dépendances
+module.exports = function(moduleAngular) {
+	var idService = "proxyNF";
+	moduleAngular.service(idService, proxyNF);
+};
