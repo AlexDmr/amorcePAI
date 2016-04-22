@@ -7,10 +7,31 @@ module.exports = function(moduleAngular) {
         
         var ctrl=this;
 
+        ctrl.nouveauPatient = {
+            "patientName"       : "",
+            "patientForname"	: "",
+			"patientNumber"	    : "",
+            "patientSex"		: "",
+            "patientBirthday"   : "",
+            "patientFloor"  	: "",
+            "patientStreet" 	: "",
+            "patientPostalCode" : "",
+            "patientCity"	: ""
+        };
+        
+        ctrl.sexe   = [
+            {sexe: 'M'},
+            {sexe: 'F'}
+        ];
+        
+        ctrl.affecterPatient = {
+            "patient"   : "",
+            "infirmier" : ""
+        };
         //créer methodes pour affectert patient à l'infirmier et ce servir du proxyNF
 
 
-        ctrl.addPatient = function(){
+        ctrl.ajouterPatient = function(){
             console.log("test add patient");
         };
 
