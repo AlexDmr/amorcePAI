@@ -13,5 +13,5 @@ var modAng =    angular.module( "cabinet", [ angularMaterial, 'ngMaterial' ] )
     $mdThemingProvider.theme('default');
 });
 
-require( "./cabinetMedical.js" )(modAng);
+require( "./cabinetMedical/cabinetMedical.js" )(modAng);
 

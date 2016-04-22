@@ -14,8 +14,8 @@ module.exports = function(moduleAngular) {
 		// Cette fonction sera appelée pour instancier un cabinet
 	}
     
-    require( "./infirmier.js" )(moduleAngular);
-    require( "./patient.js" )(moduleAngular);
+    require( "./infirmiers/infirmier.js" )(moduleAngular);
+    require( "./patients/patient.js" )(moduleAngular);
 	controller.$inject = [ 'proxyNF' ]; // Injection de dépendances ou services que va utiliser la fonction controller
 
 	moduleAngular.component( "cabinetMedical", {
